@@ -15,7 +15,11 @@ client.on("message", async (msg) => {
         if(config.debug) console.log(`${msg.author.username}: ${msg.content}`);
         //console.log(await msg.channel.messages.fetch());
         const args = msg.content.split(" ");
-        if (commands[args[0]]) commands[args[0]](client, msg);
+        if (commands[args[0]]){
+            commands[args[0]](client, msg)
+        } else {
+            msg.reply("Comando não encontrado! digite !commands para ver todos os comandos");
+        }
     }
 });
 
