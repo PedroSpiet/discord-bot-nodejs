@@ -2,5 +2,19 @@
     "token": "your yoken here",
     "prefix": "!",
     "debug": true,
-    "welcomeId": ""
+    "welcomeId": "id welcome room",
+    "permissions": {
+        "!clear": [
+            {
+                "type": "role",
+                "value": "admin id"
+            }
+        ],
+        "!ping": [
+            {
+                "type": "permission",
+                "value": "ADMINISTRATOR"
+            }
+        ]
+    }
 }
