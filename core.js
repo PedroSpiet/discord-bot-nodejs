@@ -13,7 +13,8 @@ client.on("ready", () => {
 });
 
 client.on("message", async (msg) => {
-    if (!msg.author.bot && msg.guild) {
+    if (!msg.author.bot && msg.guild && msg.content.charAt(0) == "!") {
+
         if(config.debug) console.log(`${msg.author.username}: ${msg.content}`);
         //console.log(await msg.channel.messages.fetch());
         const args = msg.content.split(" ");
@@ -34,7 +35,6 @@ client.on("guildMemberAdd", (member) => {
     const welcomeChannel = member.guild.channels.cache.find(channel => channel.id == config.welcomeId);
     welcomeChannel.send(`${member.user} acabou de entrar em nosso servidor :P yey`);
     member.send("Bem vindo ao nosso servidor\nSe divirta 😃");
-
 });
 
 client.on("guildMemberRemove",(member)=>{
