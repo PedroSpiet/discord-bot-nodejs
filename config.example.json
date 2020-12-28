@@ -1,5 +1,6 @@
 {
     "token": "your yoken here",
     "prefix": "!",
-    "debug": true
+    "debug": true,
+    "welcomeId": ""
 }
